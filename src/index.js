@@ -1,3 +1,6 @@
+import homeContent from "./homeContent";
+import menuContent from "./menuContent";
+import contactContent from "./contactContent";
 const main = () => {
   const createDiv = (className) => {
     let div = document.createElement("div");
@@ -63,45 +66,3 @@ const main = () => {
 };
 
 window.addEventListener("load", main);
-
-const homeContent = () => {
-  const createDiv = (className) => {
-    let div = document.createElement("div");
-    if (className) {
-      div.classList.add(className);
-    }
-    return div;
-  };
-
-  const testDiv = createDiv("homeContentTest");
-  testDiv.innerHTML = "Home contetnt test";
-  return testDiv;
-};
-
-const menuContent = () => {
-  const createDiv = (className) => {
-    let div = document.createElement("div");
-    if (className) {
-      div.classList.add(className);
-    }
-    return div;
-  };
-
-  const menuContent = createDiv("menuContent");
-  menuContent.innerHTML = "menuContent test";
-  return menuContent;
-};
-
-const contactContent = () => {
-  const createDiv = (className) => {
-    let div = document.createElement("div");
-    if (className) {
-      div.classList.add(className);
-    }
-    return div;
-  };
-
-  const contactContent = createDiv("contactContent");
-  contactContent.innerHTML = "contactContent test";
-  return contactContent;
-};
