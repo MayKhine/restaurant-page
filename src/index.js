@@ -4,52 +4,47 @@ import contactContent from "./contactContent";
 import css from "./styles.css";
 import bagan from "./assets/bagan.png";
 
+// TODO move to own file
+const createDiv = (className) => {
+  let div = document.createElement("div");
+  if (className) {
+    div.classList.add(className);
+  }
+  return div;
+};
+
+const createButton = (className) => {
+  let div = document.createElement("button");
+  if (className) {
+    div.classList.add(className);
+  }
+  return div;
+};
+
+const updateContent = (type) => {
+  let contentContainer = document.querySelector(".contentContainer");
+
+  // remove previous child append
+  contentContainer.innerHTML = "";
+  switch (type) {
+    case "home":
+      contentContainer.appendChild(homeContent());
+      break;
+    case "menu":
+      contentContainer.appendChild(menuContent());
+      break;
+    case "contact":
+      contentContainer.appendChild(contactContent());
+      break;
+  }
+};
+
 const main = () => {
-  //   var link = document.createElement("link");
-  //   link.rel = "stylesheet";
-  //   link.type = "test/css";
-  //   link.href = "styles.css";
-
-  const createDiv = (className) => {
-    let div = document.createElement("div");
-    if (className) {
-      div.classList.add(className);
-    }
-    return div;
-  };
-
-  const createButton = (className) => {
-    let div = document.createElement("button");
-    if (className) {
-      div.classList.add(className);
-    }
-    return div;
-  };
-
-  const updateContent = (event) => {
-    let contentContainer = document.querySelector(".contentContainer");
-    const type = event.target.className;
-    //remove previous child append
-    contentContainer.innerHTML = "";
-    switch (type) {
-      case "home":
-        contentContainer.appendChild(homeContent());
-        break;
-      case "menu":
-        // contentContainer.innerHTML = "Menu section";
-        contentContainer.appendChild(menuContent());
-        break;
-      case "contact":
-        // contentContainer.innerHTML = "Contact section";
-        contentContainer.appendChild(contactContent());
-        break;
-    }
-  };
-
-  const content = document.getElementById("content");
+  const root = document.getElementById("root");
 
   // create three tabs
   let headerBar = createDiv("headerBar");
+
   let home = createButton("home");
   let menu = createButton("menu");
   let contact = createButton("contact");
@@ -62,24 +57,16 @@ const main = () => {
   headerBar.appendChild(menu);
   headerBar.appendChild(contact);
 
-  content.appendChild(headerBar);
+  root.appendChild(headerBar);
 
   let contentContainer = createDiv("contentContainer");
-  content.appendChild(contentContainer);
+  root.appendChild(contentContainer);
 
-  contact.addEventListener("click", updateContent);
-  menu.addEventListener("click", updateContent);
-  home.addEventListener("click", updateContent);
-  console.log("content", content);
-  //   console.log(bagan);
+  home.addEventListener("click", () => updateContent("home"));
+  menu.addEventListener("click", () => updateContent("menu"));
+  contact.addEventListener("click", () => updateContent("contact"));
 
-  const bgImg = document.createElement("img");
-  bgImg.src = bagan;
-  bgImg.className = "bgImg";
-
-  const bgImgDiv = createDiv("bgImgDiv");
-  bgImgDiv.appendChild(bgImg);
-  //   content.appendChild(bgImgDiv);
+  updateContent("home");
 };
 
 window.addEventListener("load", main);
