@@ -1,7 +1,15 @@
 import homeContent from "./homeContent";
 import menuContent from "./menuContent";
 import contactContent from "./contactContent";
+import css from "./styles.css";
+import bagan from "./assets/bagan.png";
+
 const main = () => {
+  //   var link = document.createElement("link");
+  //   link.rel = "stylesheet";
+  //   link.type = "test/css";
+  //   link.href = "styles.css";
+
   const createDiv = (className) => {
     let div = document.createElement("div");
     if (className) {
@@ -63,6 +71,15 @@ const main = () => {
   menu.addEventListener("click", updateContent);
   home.addEventListener("click", updateContent);
   console.log("content", content);
+  //   console.log(bagan);
+
+  const bgImg = document.createElement("img");
+  bgImg.src = bagan;
+  bgImg.className = "bgImg";
+
+  const bgImgDiv = createDiv("bgImgDiv");
+  bgImgDiv.appendChild(bgImg);
+  //   content.appendChild(bgImgDiv);
 };
 
 window.addEventListener("load", main);
