@@ -10,18 +10,36 @@ const createDiv = (className) => {
   return div;
 };
 
+const createButton = (className) => {
+  let div = document.createElement("button");
+  if (className) {
+    div.classList.add(className);
+  }
+  return div;
+};
+
 const homeContent = () => {
-  const home = createDiv("homePage");
+  const homePage = createDiv("homePage");
 
-  const bgImg = document.createElement("img");
-  bgImg.src = bagan;
-  bgImg.className = "bgImg";
+  const bgImgDiv = createDiv("bgImgDiv");
+  bgImgDiv.style.backgroundImage = `url("${bagan}")`;
+  homePage.appendChild(bgImgDiv);
 
-  // const bgImg = createDiv("bgImg");
+  const restaurantWelcomeText = document.createElement("p");
+  restaurantWelcomeText.textContent = "Welcome to Bagan";
+  restaurantWelcomeText.className = "headerText";
+  const restauranSubText = document.createElement("p");
+  restauranSubText.textContent = "Authentic Burmese Cuisine";
+  restauranSubText.className = "subText";
 
-  home.appendChild(bgImg);
+  const orderButton = createButton("orderButton");
+  orderButton.textContent = "Order Now";
 
-  return home;
+  bgImgDiv.appendChild(restaurantWelcomeText);
+  bgImgDiv.appendChild(restauranSubText);
+  bgImgDiv.appendChild(orderButton);
+
+  return homePage;
 };
 
 export default homeContent;

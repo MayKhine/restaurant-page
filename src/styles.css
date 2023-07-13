@@ -1,7 +1,21 @@
 body {
     background-color: lightblue;
-    font-family: 'Monaco';
+    font-family: 'Helvetica';
     margin: 0;
+}
+
+button {
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 6px 6px;
+    border-radius: 10px;
+    border: none;
+}
+
+button:hover{
+    background-color: gray;
+    color: white;
 }
 
 .root {
@@ -32,9 +46,63 @@ body {
     width: 100%;
 }
 
-.bgImg {
+.bgImgDiv {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuPage {
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+}
+
+.menuHeader {
     /* width: 100%;
-    height: 100%;  */
-    background-color: green;
-    object-fit: cover;
+    height: 100%; */
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuBody {
+    /* width: 100%;
+    height: 100%; */
+    background-color: lightblue;
+
+}
+p {
+    margin: 0;    
+}
+
+h2, h4 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+}
+.headerText {
+    font-size: 50px;
+}
+
+.subText {
+    font-size: 25px;
+}
+
+.subText2 {
+    font-size: 15px;
 }
