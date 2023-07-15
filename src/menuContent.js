@@ -1,4 +1,4 @@
-import { createDiv } from "./createFunctions";
+import { createElement } from "./createFunctions";
 
 const menuJson = require("./assets/menu.json");
 
@@ -11,36 +11,20 @@ const menuList = [
   "Drinks",
 ];
 
-// console.log("menuJSON:", menuJson);
 const menuContent = () => {
-  const createText = (className) => {
-    let text = document.createElement("p");
-    if (className) {
-      text.classList.add(className);
-    }
-    return text;
-  };
+  const menuPage = createElement("div", { className: "menuPage" });
 
-  const createHeader = (type, className) => {
-    let header = document.createElement(type);
-    if (className) {
-      header.classList.add(className);
-    }
-    return header;
-  };
-  const menuPage = createDiv("menuPage");
-
-  const menuHeader = createDiv("header");
-  const menuText = createHeader("h2", "header2");
+  const menuHeader = createElement("div", { className: "header" });
+  const menuText = createElement("h2", { className: "header2" });
   menuText.textContent = "Our Food Menu";
-  const menuSubText = createHeader("h2", "header3");
+  const menuSubText = createElement("h2", { className: "header3" });
   menuSubText.textContent = "Discover Your New Favroite Cuisine";
 
   menuHeader.appendChild(menuText);
   menuHeader.appendChild(menuSubText);
   menuPage.appendChild(menuHeader);
 
-  const menuBody = createDiv("body");
+  const menuBody = createElement("div", { className: "body" });
 
   const catogries = menuJson.reduce((acc, cur) => {
     if (!acc[cur.type]) {
@@ -53,35 +37,32 @@ const menuContent = () => {
   menuList.forEach((curSection) => {
     if (catogries[curSection]) {
       //create header
-      const menuSection = createDiv("menuSection");
-      const menuSectionHeader = createHeader("h4", "menuSectionHeader");
+      const menuSection = createElement("div", { className: "menuSection" });
+      const menuSectionHeader = createElement("h4", {
+        className: "menuSectionHeader",
+      });
       menuSectionHeader.textContent = curSection;
-      const menuSectionDetail = document.createElement("ul");
-      // menuSection.className = curSection;
+      const menuSectionDetail = createElement("ul");
       menuSection.appendChild(menuSectionHeader);
       menuSection.appendChild(menuSectionDetail);
 
       menuBody.appendChild(menuSection);
 
-      catogries[curSection].forEach(
-        (item) => {
-          //create item
-          const menuItem = document.createElement("li");
-          menuItem.textContent = item.name;
-          const menuItemIngredient = document.createElement("p");
-          menuItemIngredient.textContent = item.ingredient;
-          const menuItemPrice = document.createElement("p");
-          menuItemPrice.className = "itemPrice";
-          menuItemPrice.textContent = item.price;
+      catogries[curSection].forEach((item) => {
+        //create item
+        const menuItem = createElement("li");
+        menuItem.textContent = item.name;
+        const menuItemIngredient = createElement("p");
+        menuItemIngredient.textContent = item.ingredient;
+        const menuItemPrice = createElement("p");
+        menuItemPrice.className = "itemPrice";
+        menuItemPrice.textContent = item.price;
 
-          //add item to header
-          menuItem.appendChild(menuItemIngredient);
-          menuItem.appendChild(menuItemPrice);
-          menuSectionDetail.appendChild(menuItem);
-        }
-
-        //add header to body
-      );
+        //add item to header
+        menuItem.appendChild(menuItemIngredient);
+        menuItem.appendChild(menuItemPrice);
+        menuSectionDetail.appendChild(menuItem);
+      });
     }
   });
 

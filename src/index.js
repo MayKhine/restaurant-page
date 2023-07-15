@@ -1,19 +1,7 @@
 import homeContent from "./homeContent";
 import menuContent from "./menuContent";
 import contactContent from "./contactContent";
-import css from "./styles.css";
-import bagan from "./assets/bagan.png";
-import { createDiv } from "./createFunctions";
-
-// TODO move to own file
-
-const createButton = (className) => {
-  let div = document.createElement("button");
-  if (className) {
-    div.classList.add(className);
-  }
-  return div;
-};
+import { createElement } from "./createFunctions";
 
 const updateContent = (type) => {
   let contentContainer = document.querySelector(".contentContainer");
@@ -37,11 +25,11 @@ const main = () => {
   const root = document.getElementById("root");
 
   // create three tabs
-  let headerBar = createDiv("headerBar");
+  let headerBar = createElement("div", { className: "headerBar" });
 
-  let home = createButton("home");
-  let menu = createButton("menu");
-  let contact = createButton("contact");
+  let home = createElement("button", { className: "home" });
+  let menu = createElement("button", { className: "menu" });
+  let contact = createElement("button", { className: "contact" });
 
   home.innerHTML = "Home";
   menu.innerHTML = "Menu";
@@ -53,7 +41,9 @@ const main = () => {
 
   root.appendChild(headerBar);
 
-  let contentContainer = createDiv("contentContainer");
+  let contentContainer = createElement("div", {
+    className: "contentContainer",
+  });
   root.appendChild(contentContainer);
 
   home.addEventListener("click", () => updateContent("home"));
@@ -61,7 +51,7 @@ const main = () => {
   contact.addEventListener("click", () => updateContent("contact"));
 
   //debugging the current page
-  updateContent("contact");
+  updateContent("home");
 };
 
 window.addEventListener("load", main);
