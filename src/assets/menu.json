@@ -2,114 +2,114 @@
     "name": "Golden Triangle",
     "ingredient": "chicken, peas, tarmarind vinaigrette",
     "price": "7",
-    "type": "appetizer"
+    "type": "Appetizer"
 },
 {
     "name": "Rangoon Crab",
     "ingredient": "cream Cheese, crab, hot sauce",
     "price": "8.5",
-    "type": "appetizer"
+    "type": "Appetizer"
 },
 {
     "name": "Fried Fish",
     "ingredient": "fish, snap peas, spicy green dressing",
     "price": "13",
-    "type": "appetizer"
+    "type": "Appetizer"
 },
 {
     "name": "Coconut Chicken Curry", 
     "ingredient": "coconut, chicken", 
     "price": "16",
-    "type": "mainCourse"
+    "type": "Main Course"
 }, 
 {
     "name": "Golden Egg Curry", 
     "ingredient": "egg, tomato", 
     "price": "12",
-    "type": "mainCourse"
+    "type": "Main Course"
 },
 {
     "name": "Fish Curry", 
     "ingredient": "fish, onion", 
     "price": "20",
-    "type": "mainCourse"
+    "type": "Main Course"
 },
 {
     "name":  "Pork Curry", 
     "ingredient": "pork, ginger",
     "price": "22",
-    "type": "mainCourse"
+    "type": "Main Course"
 },
 {
     "name":  "Tea Leaves Salad", 
     "ingredient": "tea leaves, peanut, tomato, garlic",
     "price": "12",
-    "type": "soupSalads"
+    "type": "Soup and Salads"
 },
 {
     "name":  "Tomato Salad", 
     "ingredient": "tomato, garlic, onion",
     "price": "10",
-    "type": "soupSalads"
+    "type": "Soup and Salads"
 },
 {
     "name":  "Mixed Noddle Salad", 
     "ingredient": "noddles, egg, onion",
     "price": "9",
-    "type": "soupSalads"
+    "type": "Soup and Salads"
 },
 {
     "name":  "Samoosa Soup", 
     "ingredient": "samoosa, beans, chicken stock",
     "price": "7",
-    "type": "soupSalads"
+    "type": "Soup and Salads"
 },
 {
     "name":  "Yellow Bean Soup", 
     "ingredient": "yellow bean, onion, tofu",
     "price": "9",
-    "type": "soupSalads"
+    "type": "Soup and Salads"
 },
 {
     "name":  "Mohinga", 
     "ingredient": "noddle, fish soup",
     "price": "15",
-    "type": "specials"
+    "type": "Specials"
 },
 {
     "name":  "NanGyi Noddle", 
     "ingredient": "mandalay noddle, chicken, chick peas",
     "price": "12",
-    "type": "specials"
+    "type": "Specials"
 },
 {
     "name":  "DaungLan", 
     "ingredient": "rice, curry, onion, fish",
     "price": "25",
-    "type": "specials"
+    "type": "Specials"
 },
 {
     "name":  "Sanwin Makin", 
     "ingredient": "rice cake, poppy seeeds",
     "price": "7",
-    "type": "desserts"
+    "type": "Desserts"
 },
 {
     "name":  "Falooda", 
     "ingredient": "rose milk, jelly, egg custard",
     "price": "9",
-    "type": "desserts"
+    "type": "Desserts"
 },
 {
     "name":  "Burmese Plam Beer", 
     "ingredient": "palm beer",
     "price": "8",
-    "type": "drinks"
+    "type": "Drinks"
 },
 {
     "name":  "Royal Myanmar", 
     "ingredient": "milk tea",
     "price": "6",
-    "type": "drinks"
+    "type": "Drinks"
 }
 ]
