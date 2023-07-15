@@ -66,7 +66,8 @@ const main = () => {
   menu.addEventListener("click", () => updateContent("menu"));
   contact.addEventListener("click", () => updateContent("contact"));
 
-  updateContent("home");
+  //debugging the current page
+  updateContent("menu");
 };
 
 window.addEventListener("load", main);
