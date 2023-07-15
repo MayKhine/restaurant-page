@@ -3,15 +3,9 @@ import menuContent from "./menuContent";
 import contactContent from "./contactContent";
 import css from "./styles.css";
 import bagan from "./assets/bagan.png";
+import { createDiv } from "./createFunctions";
 
 // TODO move to own file
-const createDiv = (className) => {
-  let div = document.createElement("div");
-  if (className) {
-    div.classList.add(className);
-  }
-  return div;
-};
 
 const createButton = (className) => {
   let div = document.createElement("button");
@@ -51,7 +45,7 @@ const main = () => {
 
   home.innerHTML = "Home";
   menu.innerHTML = "Menu";
-  contact.innerHTML = "contact";
+  contact.innerHTML = "Contact";
 
   headerBar.appendChild(home);
   headerBar.appendChild(menu);
@@ -67,7 +61,7 @@ const main = () => {
   contact.addEventListener("click", () => updateContent("contact"));
 
   //debugging the current page
-  updateContent("menu");
+  updateContent("contact");
 };
 
 window.addEventListener("load", main);

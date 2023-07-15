@@ -1,14 +1,8 @@
 import bagan from "./assets/bagan.png";
 import css from "./styles.css";
+import { createDiv } from "./createFunctions";
 
 // TODO move to own file
-const createDiv = (className) => {
-  let div = document.createElement("div");
-  if (className) {
-    div.classList.add(className);
-  }
-  return div;
-};
 
 const createButton = (className) => {
   let div = document.createElement("button");
@@ -27,10 +21,10 @@ const homeContent = () => {
 
   const restaurantWelcomeText = document.createElement("p");
   restaurantWelcomeText.textContent = "Welcome to Bagan";
-  restaurantWelcomeText.className = "headerText";
+  restaurantWelcomeText.className = "header1";
   const restauranSubText = document.createElement("p");
   restauranSubText.textContent = "Authentic Burmese Cuisine";
-  restauranSubText.className = "subText";
+  restauranSubText.className = "header3";
 
   const orderButton = createButton("orderButton");
   orderButton.textContent = "Order Now";

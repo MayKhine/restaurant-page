@@ -1,0 +1,4 @@
+- top buttons (selection, cursor to pointer, contact with C)
+- scrolling on main pages on the container ( not the whole body)
+- oder now button ( hook it to menu / contact )
+- bg color and stuffs

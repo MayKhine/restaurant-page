@@ -1,3 +1,5 @@
+import { createDiv } from "./createFunctions";
+
 const menuJson = require("./assets/menu.json");
 
 const menuList = [
@@ -11,14 +13,6 @@ const menuList = [
 
 // console.log("menuJSON:", menuJson);
 const menuContent = () => {
-  const createDiv = (className) => {
-    let div = document.createElement("div");
-    if (className) {
-      div.classList.add(className);
-    }
-    return div;
-  };
-
   const createText = (className) => {
     let text = document.createElement("p");
     if (className) {
@@ -36,53 +30,17 @@ const menuContent = () => {
   };
   const menuPage = createDiv("menuPage");
 
-  const menuHeader = createDiv("menuHeader");
-  const menuText = createHeader("h2", "subText");
+  const menuHeader = createDiv("header");
+  const menuText = createHeader("h2", "header2");
   menuText.textContent = "Our Food Menu";
-  const menuSubText = createHeader("h2", "subText2");
+  const menuSubText = createHeader("h2", "header3");
   menuSubText.textContent = "Discover Your New Favroite Cuisine";
-  menuSubText.className = "subText2";
 
   menuHeader.appendChild(menuText);
   menuHeader.appendChild(menuSubText);
   menuPage.appendChild(menuHeader);
 
-  const menuBody = createDiv("menuBody");
-
-  const appetizersArr = [
-    {
-      name: "Golden Triangle",
-      ingredient: "chicken, peas, tarmarind vinaigrette",
-      price: "7",
-    },
-    {
-      name: "Rangoon Crab",
-      ingredient: "cream Cheese, crab, hot sauce",
-      price: "8.5",
-    },
-    {
-      name: "Fried Fish",
-      ingredient: "fish, snap peas, spicy green dressing",
-      price: "13",
-    },
-  ];
-
-  const appetizersHeader = createHeader("h4", "appetizersHeader");
-  appetizersHeader.textContent = "Appetizers";
-  const appetizersSection = document.createElement("ul");
-  appetizersSection.className = "appetizers";
-
-  appetizersArr.forEach((item) => {
-    const menuItem = document.createElement("li");
-    const menuItemIngredient = document.createElement("p");
-    menuItem.textContent = item.name;
-    menuItemIngredient.textContent = item.ingredient;
-    const menuItemPrice = document.createElement("p");
-    menuItemPrice.textContent = item.price;
-    menuItem.appendChild(menuItemIngredient);
-    menuItem.appendChild(menuItemPrice);
-    appetizersSection.appendChild(menuItem);
-  });
+  const menuBody = createDiv("body");
 
   const catogries = menuJson.reduce((acc, cur) => {
     if (!acc[cur.type]) {
