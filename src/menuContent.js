@@ -1,3 +1,15 @@
+const menuJson = require("./assets/menu.json");
+
+const menuList = [
+  "appetizer",
+  "mainCourse",
+  "soupSalads",
+  "specials",
+  "desserts",
+  "drinks",
+];
+
+// console.log("menuJSON:", menuJson);
 const menuContent = () => {
   const createDiv = (className) => {
     let div = document.createElement("div");
@@ -55,28 +67,11 @@ const menuContent = () => {
     },
   ];
 
-  const mainCourse = [
-    "Coconut Chicken Curry",
-    "Golden Egg Curry",
-    "Fish Curry",
-    "Pork Curry",
-  ];
-  const soupSalds = [
-    "Tea leaves salad",
-    "Tomato Salad",
-    "Mixed Noddle Salad",
-    "Samoosa Soup",
-    "Yellow Bean Soup",
-  ];
-  const specials = ["Mohinga", "NanGyi Noddle", "DaungLan"];
-  const desserts = ["Sanwin Makin", "Falooda"];
-  const drinks = ["Burmese Plam Beer", "Royal Myanmar"];
-
-  // const appetizersSection = createDiv("appetizers");
   const appetizersHeader = createHeader("h4", "appetizersHeader");
   appetizersHeader.textContent = "Appetizers";
   const appetizersSection = document.createElement("ul");
   appetizersSection.className = "appetizers";
+
   appetizersArr.forEach((item) => {
     const menuItem = document.createElement("li");
     const menuItemIngredient = document.createElement("p");
@@ -89,10 +84,81 @@ const menuContent = () => {
     appetizersSection.appendChild(menuItem);
   });
 
-  console.log(menuBody);
-  menuBody.appendChild(appetizersHeader);
-  menuBody.appendChild(appetizersSection);
+  // console.log(menuBody);
+  // menuBody.appendChild(appetizersHeader);
+  // menuBody.appendChild(appetizersSection);
+  // menuPage.appendChild(menuBody);
+
+  /*
+  menuJson.forEach((item) => {
+    // iterate over the json file using menuList order
+    menuList.forEach((listItem) => {
+      const menuSectionHeader = createHeader("h4", item.type);
+      menuSectionHeader.textContent = item.type;
+      if (listItem == item.type) {
+        //create menu section: app, main
+        const menuSection = document.createElement("ul");
+        menuSection.className = item.type;
+        //create each item
+        const menuItem = document.createElement("li");
+        menuItem.textContent = item.name;
+        const menuItemIngredient = document.createElement("p");
+        menuItemIngredient.textContent = item.ingredient;
+        const menuItemPrice = document.createElement("p");
+        menuItemPrice.textContent = item.price;
+        menuItem.appendChild(menuItemIngredient);
+        menuItem.appendChild(menuItemPrice);
+        //attach item to section
+        menuSection.appendChild(menuItem);
+        //attach section to body
+        menuSectionHeader.appendChild(menuSection);
+      }
+      menuBody.appendChild(menuSectionHeader);
+    });
+  });
+*/
+
+  const catogries = menuJson.reduce((acc, cur) => {
+    if (!acc[cur.type]) {
+      acc[cur.type] = [];
+    }
+    acc[cur.type].push(cur);
+    return acc;
+  }, {});
+
+  menuList.forEach((curSection) => {
+    if (catogries[curSection]) {
+      //create header
+      const menuSectionHeader = createHeader("h4", "menuSection");
+      menuSectionHeader.textContent = curSection;
+      const menuSection = document.createElement("ul");
+      // menuSection.className = curSection;
+      menuSectionHeader.appendChild(menuSection);
+      menuBody.appendChild(menuSectionHeader);
+
+      catogries[curSection].forEach(
+        (item) => {
+          //create item
+          const menuItem = document.createElement("li");
+          menuItem.textContent = item.name;
+          const menuItemIngredient = document.createElement("p");
+          menuItemIngredient.textContent = item.ingredient;
+          const menuItemPrice = document.createElement("p");
+          menuItemPrice.textContent = item.price;
+
+          //add item to header
+          menuItem.appendChild(menuItemIngredient);
+          menuItem.appendChild(menuItemPrice);
+          menuSection.appendChild(menuItem);
+        }
+
+        //add header to body
+      );
+    }
+  });
+
   menuPage.appendChild(menuBody);
+
   return menuPage;
 };
 
