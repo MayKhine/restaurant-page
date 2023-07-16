@@ -3,19 +3,49 @@ import menuContent from "./menuContent";
 import contactContent from "./contactContent";
 import { createElement } from "./createFunctions";
 
-const updateContent = (type) => {
-  let contentContainer = document.querySelector(".contentContainer");
+// const updateContent = (type) => {
+//   let contentContainer = document.querySelector(".contentContainer");
 
+//   // remove previous child append
+//   contentContainer.innerHTML = "";
+//   switch (type) {
+//     case "home":
+//       contentContainer.appendChild(homeContent());
+//       break;
+//     case "menu":
+//       contentContainer.appendChild(menuContent());
+//       break;
+//     case "contact":
+//       contentContainer.appendChild(contactContent());
+//       break;
+//   }
+// };
+
+const updateContent = (ele) => {
+  let contentContainer = document.querySelector(".contentContainer");
+  //reset the button color
+  document.querySelector("button.home").style.border = "0px";
+
+  document.querySelector("button.menu").style.border = "0px";
+  document.querySelector("button.contact").style.border = "0px";
+
+  // document.querySelector("button.menu").style.background = "white";
+  // document.querySelector("button.contact").style.background = "white";
+
+  console.log("ele.className: ", ele.className);
   // remove previous child append
   contentContainer.innerHTML = "";
-  switch (type) {
+  switch (ele.className) {
     case "home":
+      document.querySelector("button.home").style.border = "1px solid black";
       contentContainer.appendChild(homeContent());
       break;
     case "menu":
+      document.querySelector("button.menu").style.border = "1px solid black";
       contentContainer.appendChild(menuContent());
       break;
     case "contact":
+      document.querySelector("button.contact").style.border = "1px solid black";
       contentContainer.appendChild(contactContent());
       break;
   }
@@ -34,6 +64,8 @@ const main = () => {
   home.innerHTML = "Home";
   menu.innerHTML = "Menu";
   contact.innerHTML = "Contact";
+  home.name = "homeButton";
+  console.log("Home:", home);
 
   headerBar.appendChild(home);
   headerBar.appendChild(menu);
@@ -46,12 +78,12 @@ const main = () => {
   });
   root.appendChild(contentContainer);
 
-  home.addEventListener("click", () => updateContent("home"));
-  menu.addEventListener("click", () => updateContent("menu"));
-  contact.addEventListener("click", () => updateContent("contact"));
+  home.addEventListener("click", () => updateContent(home));
+  menu.addEventListener("click", () => updateContent(menu));
+  contact.addEventListener("click", () => updateContent(contact));
 
   //debugging the current page
-  updateContent("home");
+  updateContent(home);
 };
 
 window.addEventListener("load", main);

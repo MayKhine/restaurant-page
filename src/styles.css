@@ -15,8 +15,9 @@ button {
 }
 
 button:hover{
-    background-color: gray;
-    color: white;
+    background-color: lightgray;
+    color: black;
+    cursor: pointer;
 }
 
 .root {
