@@ -19,6 +19,10 @@ const homeContent = () => {
   const orderButton = createElement("button", { className: "orderButton" });
   orderButton.textContent = "Order Now";
 
+  // how to do this?
+  // const currentURL = window.location.href;
+  // orderButton.addEventListener("click", () => {location.assign(currentURL+"/menu")})
+
   bgImgDiv.appendChild(restaurantWelcomeText);
   bgImgDiv.appendChild(restauranSubText);
   bgImgDiv.appendChild(orderButton);

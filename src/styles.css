@@ -1,5 +1,5 @@
 body {
-    background-color: lightblue;
+    background-color: green;
     font-family: 'Papyrus';
     margin: 0;
 }
@@ -32,15 +32,17 @@ button:hover{
     flex-direction: row;
     justify-content: center;
     gap: 8px;
-    padding: 8px
+    padding: 8px;
 }
 
 .contentContainer {
-    background-color: gray;
+    background-color: purple;
     display: flex;
     position: relative;
     flex-grow: 1;
     justify-content: center;
+
+
 }
 
 .homePage {
@@ -61,8 +63,8 @@ button:hover{
 }
 
 .menuPage {
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     background-color: lightgray;
     display: flex;
     flex-direction: column;
@@ -72,14 +74,14 @@ button:hover{
 }
 
 .contactPage {
-    width: 100%;
-    height: 100%;
-    background-color: lightgray;
+    /* width: 100vw; */
+    /* height: 100vh; */
+    background-color: orange;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 2rem 2rem  2rem 2rem  ;
+    padding: 2rem 2rem 2rem 2rem  ;
     max-width: 44rem;
 }
 
