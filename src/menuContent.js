@@ -22,6 +22,11 @@ const menuContent = () => {
 
   menuHeader.appendChild(menuText);
   menuHeader.appendChild(menuSubText);
+
+  const menuWrapper = createElement("div", { className: "wrapper2" });
+  // menuPage.appendChild(menuWrapper);
+  // menuWrapper.appendChild(menuHeader);
+
   menuPage.appendChild(menuHeader);
 
   const menuBody = createElement("div", { className: "body" });
@@ -65,10 +70,15 @@ const menuContent = () => {
       });
     }
   });
+  // const menuWrapper = createElement("div", { className: "wrapper2" });
+  // menuPage.appendChild(menuWrapper);
+  // menuWrapper.appendChild(menuBody);
+  // menuWrapper.appendChild(menuBody);
 
   menuPage.appendChild(menuBody);
-
-  return menuPage;
+  menuWrapper.appendChild(menuPage);
+  return menuWrapper;
+  // return menuPage;
 };
 
 export default menuContent;

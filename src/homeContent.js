@@ -2,7 +2,7 @@ import bagan from "./assets/bagan.png";
 import "./styles.css";
 import { createElement } from "./createFunctions";
 
-const homeContent = () => {
+const homeContent = (navigateMenu) => {
   const homePage = createElement("div", { className: "homePage" });
 
   const bgImgDiv = createElement("div", { className: "bgImgDiv" });
@@ -21,7 +21,7 @@ const homeContent = () => {
 
   // how to do this?
   // const currentURL = window.location.href;
-  // orderButton.addEventListener("click", () => {location.assign(currentURL+"/menu")})
+  orderButton.addEventListener("click", () => navigateMenu());
 
   bgImgDiv.appendChild(restaurantWelcomeText);
   bgImgDiv.appendChild(restauranSubText);

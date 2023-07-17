@@ -22,23 +22,24 @@ import { createElement } from "./createFunctions";
 // };
 
 const updateContent = (ele) => {
-  let contentContainer = document.querySelector(".contentContainer");
+  let contentContainer = document.querySelector(".wrapper"); //contentContainer //change back
+  // let wrapper = document.querySelector(".wrapper");
   //reset the button color
   document.querySelector("button.home").style.border = "0px";
-
   document.querySelector("button.menu").style.border = "0px";
   document.querySelector("button.contact").style.border = "0px";
 
-  // document.querySelector("button.menu").style.background = "white";
-  // document.querySelector("button.contact").style.background = "white";
-
-  console.log("ele.className: ", ele.className);
   // remove previous child append
   contentContainer.innerHTML = "";
   switch (ele.className) {
     case "home":
       document.querySelector("button.home").style.border = "1px solid black";
-      contentContainer.appendChild(homeContent());
+      const menuEle = document.querySelector("button.menu");
+      contentContainer.appendChild(
+        homeContent(() => {
+          updateContent(menuEle);
+        })
+      );
       break;
     case "menu":
       document.querySelector("button.menu").style.border = "1px solid black";
@@ -76,14 +77,18 @@ const main = () => {
   let contentContainer = createElement("div", {
     className: "contentContainer",
   });
+  let wrapper = createElement("div", {
+    className: "wrapper",
+  });
   root.appendChild(contentContainer);
+  contentContainer.appendChild(wrapper);
 
   home.addEventListener("click", () => updateContent(home));
   menu.addEventListener("click", () => updateContent(menu));
   contact.addEventListener("click", () => updateContent(contact));
 
   //debugging the current page
-  updateContent(home);
+  updateContent(menu);
 };
 
 window.addEventListener("load", main);
