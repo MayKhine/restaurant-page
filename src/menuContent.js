@@ -12,6 +12,8 @@ const menuList = [
 ];
 
 const menuContent = () => {
+  const scrollDiv = createElement("div", { className: "scrollDiv" });
+  const flexCenterDiv = createElement("div", { className: "flexCenterDiv" });
   const menuPage = createElement("div", { className: "menuPage" });
 
   const menuHeader = createElement("div", { className: "header" });
@@ -22,10 +24,6 @@ const menuContent = () => {
 
   menuHeader.appendChild(menuText);
   menuHeader.appendChild(menuSubText);
-
-  const menuWrapper = createElement("div", { className: "wrapper2" });
-  // menuPage.appendChild(menuWrapper);
-  // menuWrapper.appendChild(menuHeader);
 
   menuPage.appendChild(menuHeader);
 
@@ -70,15 +68,11 @@ const menuContent = () => {
       });
     }
   });
-  // const menuWrapper = createElement("div", { className: "wrapper2" });
-  // menuPage.appendChild(menuWrapper);
-  // menuWrapper.appendChild(menuBody);
-  // menuWrapper.appendChild(menuBody);
 
   menuPage.appendChild(menuBody);
-  menuWrapper.appendChild(menuPage);
-  return menuWrapper;
-  // return menuPage;
+  scrollDiv.appendChild(flexCenterDiv);
+  flexCenterDiv.appendChild(menuPage);
+  return scrollDiv;
 };
 
 export default menuContent;

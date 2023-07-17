@@ -1,5 +1,5 @@
 html, body {
-    background-color: green;
+    background-color: orange;
     font-family: 'Papyrus';
     margin: 0;
     height: 100%;
@@ -13,78 +13,63 @@ button {
     border-radius: 10px;
     border: none;
     font-family: 'Papyrus';
+    background-color: rgb(255, 247, 232) ;
 }
 
 button:hover{
-    background-color: lightgray;
+    background-color: rgb(252, 203, 113);
     color: black;
     cursor: pointer;
 }
 
 .root {
-    /* width: 100vw;
-    height: 100vh; */
     display: flex;
     flex-direction: column;
-
     height: 100%;
 }
-
-
 
 .headerBar {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 8px;
-    padding: 8px;
+    padding: 15px;
     align-items: flex-start;
     flex-shrink: 0;
 }
 
 .contentContainer {
-    background-color: purple;
     display: flex;
-    /* position: relative;
-    flex-grow: 1; */
+    position: relative;
+    flex-grow: 1;
     justify-content: center;
-
-    /* flex: 1;
-    overflow: auto; */
-    /* height: 100%; */
-
-    /* margin: 0;
-    height: 100%; */
-    /* flex: 1; */
     overflow: hidden;
 }
 
-.wrapper {
-    overflow:scroll;
-    height: 100%;
-    background-color: pink;
-    width: 100%;
-
-    margin-left: auto;
-    margin-right: auto;
-    /* position: relative; */
-    /* display: flex;
-    justify-content: center; */
+.homeWrapper{
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    height: 100vh;
+    width: 100%;    
 }
 
-.wrapper2 {
+.scrollDiv {
+    overflow:auto;
+    height: 100%;
+    /* background-color: pink; */
+    width: 100%;
+}
 
+.flexCenterDiv {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* width: 100%; */
-    background-color: orange;
+    /* background-color: orange; */
 }
 
-
 .homePage {
-    background-color: red;
     height: 100%;
     width: 100%;
 }
@@ -101,31 +86,16 @@ button:hover{
 }
 
 .menuPage {
-    /* width: 100%;
-    height: 100%; */
-    background-color: lightgray;
-
+    background-color: rgb(255, 247, 232);
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    padding: 1rem 2rem  1rem 2rem  ;
+    padding: 2rem 2rem  2rem 2rem  ;
     max-width: 55rem;
-    /* margin: 10px 30px 10px 30px; */
-
-    /* justify-content: center; */
-    /* align-self: center;
-    align-content: center; */
-    /* align-items: flex-start; */
-        /* height: 100%; */
-        /* flex-grow: 1; */
-    /* overflow: auto; */
-
+    margin-bottom: 30px;
 }
 
 .contactPage {
-    /* width: 100vw;
-    height: 100vh; */
-    background-color: orange;
+    background-color: rgb(255, 247, 232);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -135,33 +105,25 @@ button:hover{
 }
 
 .header {
-    /* margin-top: 5rem; */
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     margin-bottom: 20px;
 }
 
-
 .menuPage > .body {
-    /* background-color: lightblue; */
     column-gap: 2rem;
     column-count: 2;
     column-width:    min(25rem);
-    /* padding: 2rem  3.5rem  2rem  3.5rem  ; */
 }
 
 .menuSection {
-    /* background-color: lightgreen; */
     margin: 0;
     margin-bottom: 10px;
     break-inside: avoid;
-    /* width: 25rem; */
 }
 
 .contactPage > .body {
-    /* background-color: aqua; */
     column-gap: 2rem;
     column-count: 2;
     column-width: min(20rem);
@@ -169,12 +131,13 @@ button:hover{
 
 a{
     color: black;
-    text-decoration: underline 0.5px;
+    text-decoration: underline 1px;
 }
 
 a:hover {
     color: darkblue;
 }
+
 .address {
     padding-bottom: 10px;
 }
@@ -186,8 +149,6 @@ p {
 h2, h4 {
     margin: 0;
 }
-
-
 
 .header1 {
     font-size: 50px;

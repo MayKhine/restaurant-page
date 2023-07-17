@@ -1,5 +1,7 @@
 import { createElement } from "./createFunctions";
 const contactContent = () => {
+  const scrollDiv = createElement("div", { className: "scrollDiv" });
+  const flexCenterDiv = createElement("div", { className: "flexCenterDiv" });
   const contactPage = createElement("div", { className: "contactPage" });
 
   const contactHeader = createElement("div", { className: "header" });
@@ -37,7 +39,10 @@ const contactContent = () => {
   contactPage.appendChild(contactHeader);
   contactPage.appendChild(contactBody);
 
-  return contactPage;
+  scrollDiv.appendChild(flexCenterDiv);
+  flexCenterDiv.appendChild(contactPage);
+  return scrollDiv;
+  // return contactPage;
 };
 
 export default contactContent;

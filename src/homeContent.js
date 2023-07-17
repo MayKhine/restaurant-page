@@ -3,7 +3,11 @@ import "./styles.css";
 import { createElement } from "./createFunctions";
 
 const homeContent = (navigateMenu) => {
+  // const homeWrapper = createElement("div", { className: "homeWrapper" });
   const homePage = createElement("div", { className: "homePage" });
+
+  //added
+  // homeWrapper.appendChild(homePage);
 
   const bgImgDiv = createElement("div", { className: "bgImgDiv" });
   bgImgDiv.style.backgroundImage = `url("${bagan}")`;
@@ -28,6 +32,7 @@ const homeContent = (navigateMenu) => {
   bgImgDiv.appendChild(orderButton);
 
   return homePage;
+  // return homeWrapper;
 };
 
 export default homeContent;
