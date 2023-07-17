@@ -1,5 +1,0 @@
-- top buttons (contact with C)
-- scrolling on main pages on the container ( not the whole body)
-- oder now button ( hook it to menu / contact )
-
-- update bg and make it look pretty
